@@ -1,0 +1,50 @@
+def Up():
+    print ("[0;",n,"]", sep="")
+    return 1
+def Down():
+    print ("[0;",-n,"]", sep="")
+    return 1
+def Left():
+    print ("[",-n,";0]", sep="")
+    return 1
+def Right():
+    print ("[",n,";0]", sep="")
+    return 1
+
+
+print("Welcome! \nYour coordinates are: [0;0]\n")
+print("Where do you want to move? Press the right number: ")
+print("Up    - 1\nDown  - 2\nLeft  - 3\nRight - 4")
+while True:
+    k = input()
+    if (k!='1' and k!='2' and k!='3' and k!= '4'):
+        print("Invalid value. Try again: ")
+    else:
+        k =int(k)
+        break
+print("How far to move?")
+while True:
+    try:
+        n = input()
+        n = float(n)
+        if (n<0):
+            print("Impossible! Enter a positive number: ")
+            continue
+        break
+    except:
+        print("It's not a number! Try again: ")
+
+print("New coordinates are: ", end="")
+
+if (k==1):
+    Up()
+if (k==2):
+    Down()
+if (k==3):
+    Left()
+if (k==4):
+    Right()
+
+
+
+

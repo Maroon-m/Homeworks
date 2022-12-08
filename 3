@@ -1,0 +1,32 @@
+import math
+def EnterInt():
+    while True:
+        try:
+            n = int(input())
+            break
+        except:
+            print("Некорректное значение. Введите целое число: ")
+    return n
+
+print("Введите коэффициенты для решения квадратного уравнения")
+print("a =", end=' ')
+a=EnterInt()
+print("b =", end=' ')
+b=EnterInt()
+print("c =", end=' ')
+c=EnterInt()
+
+print("\n",a,"x^2+(",b,"x)+(",c,")=0",sep='')
+d = b**2 - 4*a*c
+if (d==0):
+    x = -b/(2*a)
+    print ('Корень уравнения:', x)
+elif (d>0):
+    x1 = (-b+math.sqrt(d))/(2*a)
+    x2 = (-b-math.sqrt(d))/(2*a)
+    print ('Корни уравнения:\nx1 =', x1, '\nx2 =',x2,)
+else:
+    d = math.sqrt(-d)
+    x1 = complex(-b/(2*a),d/(2*a))
+    x2 = complex(-b/(2*a),-d/(2*a))
+    print('Корни уравнения:\nx1 =',x1, '\nx2 =',x2)

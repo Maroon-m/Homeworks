@@ -1,0 +1,46 @@
+k=''
+x = 0
+y = 0
+print("Welcome! \nYour coordinates are: [0;0]\n")
+
+while True:
+    print("Where do you want to move?")
+    print("Up    - 1\nDown  - 2\nLeft  - 3\nRight - 4\nEnter 0 to stop\n")
+    print("Press the right number: ", end='')
+    while True:
+        k = input()
+        if (k!='1' and k!='2' and k!='3' and k!= '4' and k!='0'):
+            print("Invalid value. Try again: ")
+        else:
+            k =int(k)
+            break
+    if (k==0):
+        print("See you! ;)")
+        break
+    print("How far to move?")
+    while True:
+        try:
+            n = input()
+            n = float(n)
+            if (n<0):
+                print("Impossible! Enter a positive number: ")
+                continue
+            break
+        except:
+            print("It's not a number! Try again: ")
+
+    print("New coordinates are: ", end="")
+
+    if (k==1):
+        y+=n
+    if (k==2):
+        y-=n
+    if (k==3):
+        x-=n
+    if (k==4):
+        x+=n
+    print ("[",x,";",y,"]\n", sep="")
+
+
+
+
